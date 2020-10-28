@@ -1,5 +1,11 @@
-
-language: java
-jdk:
+language: java jdk:
 - openjdk15
-script: ant build
+
+addons:
+  sonarcloud:
+    organization: "andrealocatelliuniroma2"
+    token: "88404e116c2f208a3a83cc1f30cfd9580afd1c4c"
+    
+script:
+- ant build
+- sonar-scanner
